@@ -85,6 +85,14 @@ public class BinarySearchTreeTraversalTest {
     }
 
     @Test
+    void testIterativePostorderMatchesRecursive() {
+        BinarySearchTree<Integer> bst = buildExampleTree();
+        List<Integer> rec = bst.postorderRecursive();
+        List<Integer> iter = TraversalExercises.postorderIterative(bst.getRoot());
+        assertEquals(rec, iter);
+    }
+
+    @Test
     void testLevelOrderUsingQueueMatchesLevelOrder() {
         BinarySearchTree<Integer> bst = buildExampleTree();
         List<Integer> rec = bst.levelOrder();
